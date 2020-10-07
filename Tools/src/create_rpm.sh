@@ -16,25 +16,25 @@ mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/rpmbuild/SRPMS
 mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
 mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/etc/init/
 mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/etc/systemd/system/
-mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/
-mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/var/lib/amazon/ssm/
+mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/
+mkdir -p ${BGO_SPACE}/bin/linux_amd64/linux/var/lib/clunk80/ssm/
 
 echo "Copying application files"
 
-cp ${BGO_SPACE}/bin/linux_amd64/amazon-ssm-agent ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/ssm-agent-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/ssm-document-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/ssm-session-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/ssm-session-logger ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/ssm-cli ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/
-cp ${BGO_SPACE}/seelog_unix.xml ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/seelog.xml.template
-cp ${BGO_SPACE}/amazon-ssm-agent.json.template ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/
-cp ${BGO_SPACE}/RELEASENOTES.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/
-cp ${BGO_SPACE}/README.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/
-cp ${BGO_SPACE}/NOTICE.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/amazon/ssm/
-cp ${BGO_SPACE}/packaging/linux/amazon-ssm-agent.conf ${BGO_SPACE}/bin/linux_amd64/linux/etc/init/
-cp ${BGO_SPACE}/packaging/linux/amazon-ssm-agent.service ${BGO_SPACE}/bin/linux_amd64/linux/etc/systemd/system/
-cd ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/; strip --strip-unneeded amazon-ssm-agent; strip --strip-unneeded ssm-agent-worker; strip --strip-unneeded ssm-cli; strip --strip-unneeded ssm-document-worker; strip --strip-unneeded ssm-session-worker; strip --strip-unneeded ssm-session-logger; cd ~-
+cp ${BGO_SPACE}/bin/linux_amd64/amazon-ssm-agent ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-agent
+cp ${BGO_SPACE}/bin/linux_amd64/ssm-agent-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-agent-worker
+cp ${BGO_SPACE}/bin/linux_amd64/ssm-document-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-document-worker
+cp ${BGO_SPACE}/bin/linux_amd64/ssm-session-worker ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-session-worker
+cp ${BGO_SPACE}/bin/linux_amd64/ssm-session-logger ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-session-logger
+cp ${BGO_SPACE}/bin/linux_amd64/ssm-cli ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/clunk80-ssm-cli
+cp ${BGO_SPACE}/seelog_unix.xml ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/seelog.xml.template
+cp ${BGO_SPACE}/amazon-ssm-agent.json.template ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/
+cp ${BGO_SPACE}/RELEASENOTES.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/
+cp ${BGO_SPACE}/README.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/
+cp ${BGO_SPACE}/NOTICE.md ${BGO_SPACE}/bin/linux_amd64/linux/etc/clunk80/ssm/
+cp ${BGO_SPACE}/packaging/linux/amazon-ssm-agent.conf ${BGO_SPACE}/bin/linux_amd64/linux/etc/init/clunk80-ssm-agent.conf
+cp ${BGO_SPACE}/packaging/linux/amazon-ssm-agent.service ${BGO_SPACE}/bin/linux_amd64/linux/etc/systemd/system/clunk80-ssm-agent.service
+cd ${BGO_SPACE}/bin/linux_amd64/linux/usr/bin/; strip --strip-unneeded clunk80-ssm-agent; strip --strip-unneeded clunk80-ssm-agent-worker; strip --strip-unneeded clunk80-ssm-cli; strip --strip-unneeded clunk80-ssm-document-worker; strip --strip-unneeded clunk80-ssm-session-worker; strip --strip-unneeded clunk80-ssm-session-logger; cd ~-
 
 echo "Creating the rpm package"
 
@@ -46,4 +46,4 @@ setarch x86_64 rpmbuild -bb --define "rpmversion `cat ${BGO_SPACE}/VERSION`" --d
 echo "Copying rpm files to bin"
 
 cp ${BGO_SPACE}/bin/linux_amd64/linux/rpmbuild/RPMS/x86_64/*.rpm ${BGO_SPACE}/bin/
-cp ${BGO_SPACE}/bin/linux_amd64/linux/rpmbuild/RPMS/x86_64/*.rpm ${BGO_SPACE}/bin/linux_amd64/amazon-ssm-agent.rpm
+cp ${BGO_SPACE}/bin/linux_amd64/linux/rpmbuild/RPMS/x86_64/*.rpm ${BGO_SPACE}/bin/linux_amd64/clunk80-ssm-agent.rpm
