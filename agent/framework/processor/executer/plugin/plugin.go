@@ -216,8 +216,8 @@ func loadPlatformIndependentPlugins(context context.T) runpluginutil.PluginRegis
 	workerPlugins[appconfig.PluginNameAwsRunPowerShellScript] = RunPowerShellFactory{}
 
 	// registering aws:updateSsmAgent plugin
-	updateAgentPluginName := updatessmagent.Name()
-	workerPlugins[updateAgentPluginName] = UpdateAgentFactory{}
+	// updateAgentPluginName := updatessmagent.Name()
+	// workerPlugins[updateAgentPluginName] = UpdateAgentFactory{}
 
 	// registering aws:configureContainers plugin
 	configureContainersPluginName := configurecontainers.Name()
