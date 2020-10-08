@@ -1,4 +1,4 @@
-Latest
+3.0.196.0
 ===============
 - Add support for document parameters in document plugin’s preconditions
 - Add support for new source types in aws:downloadContent plugin: HTTP(S) endpoints and private Git repositories
