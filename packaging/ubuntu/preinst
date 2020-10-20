@@ -3,19 +3,19 @@
 echo "Preparing for install"
 if [ $(cat /proc/1/comm) = init ]
 then
-    stop amazon-ssm-agent || true
+    stop clunk80-ssm-agent || true
 elif [ $(cat /proc/1/comm) = systemd ]
 then
     echo "-> Systemd detected"
     systemctl is-active snapd.service
     if [ $? -eq 0 ]; then
-        # snap service is active and user install amazon-ssm-agent via snap
-        snap list | grep "amazon-ssm-agent"
+        # snap service is active and user install clunk80-ssm-agent via snap
+        snap list | grep "clunk80-ssm-agent"
         if [ $? -eq 0 ]; then
-            echo "-> Amazon-ssm-agent is installed in this instance by snap, please use snap to update or uninstall."
+            echo "-> clunk80-ssm-agent is installed in this instance by snap, please use snap to update or uninstall."
             exit 1
         fi
     fi
-    systemctl stop amazon-ssm-agent
+    systemctl stop clunk80-ssm-agent
     systemctl daemon-reload
 fi

@@ -1,4 +1,4 @@
-/etc/init/amazon-ssm-agent.conf
-/etc/amazon/ssm/amazon-ssm-agent.json
-/etc/amazon/ssm/seelog.xml
-/lib/systemd/system/amazon-ssm-agent.service
+/etc/init/clunk80-ssm-agent.conf
+/etc/clunk80/ssm/amazon-ssm-agent.json
+/etc/clunk80/ssm/seelog.xml
+/lib/systemd/system/clunk80-ssm-agent.service

@@ -1,11 +1,11 @@
 [Unit]
-Description=amazon-ssm-agent
+Description=clunk80-ssm-agent
 After=network-online.target
 
 [Service]
 Type=simple
 WorkingDirectory=/usr/bin/
-ExecStart=/usr/bin/amazon-ssm-agent
+ExecStart=/usr/bin/clunk80-ssm-agent
 KillMode=process
 Restart=on-failure
 RestartForceExitStatus=SIGPIPE

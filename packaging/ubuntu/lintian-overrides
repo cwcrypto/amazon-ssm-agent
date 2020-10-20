@@ -1,6 +1,6 @@
 # The Go compiler is currently unable to produce read-only relocations
 # (it produces static binaries).
-hardening-no-relro /usr/bin/amazon-ssm-agent
+hardening-no-relro /usr/bin/clunk80-ssm-agent
 
 # Amazon SSM Debian maintainer and upstream author are identical.
 # Therefore see normal changelog file for Debian changes.

@@ -1,10 +1,10 @@
 echo "Stopping agent"
 if [ $(cat /proc/1/comm) = init ]
 then
-    stop amazon-ssm-agent || true
+    stop clunk80-ssm-agent || true
 elif [ $(cat /proc/1/comm) = systemd ]
 then
-    systemctl stop amazon-ssm-agent
-    systemctl disable amazon-ssm-agent
+    systemctl stop clunk80-ssm-agent
+    systemctl disable clunk80-ssm-agent
     systemctl daemon-reload
 fi
