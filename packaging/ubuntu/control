@@ -3,6 +3,6 @@ Depends: libc6
 Priority: optional
 Copyright: Apache License, Version 2.0
 Suggests: aws-ssm-agent-doc
-Maintainer: Commonwealth Crypto, Inc. <support@clunk80.com>
-Description: Modified Amazon SSM Agent for use with clunk80.com
+Maintainer: Commonwealth Crypto, Inc. <support@bastionzero.com>
+Description: Modified Amazon SSM Agent for use with bastionzero.com
 

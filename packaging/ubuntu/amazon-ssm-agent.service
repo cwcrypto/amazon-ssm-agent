@@ -1,11 +1,11 @@
 [Unit]
-Description=clunk80-ssm-agent
+Description=bzero-ssm-agent
 After=network-online.target
 
 [Service]
 Type=simple
 WorkingDirectory=/usr/bin/
-ExecStart=/usr/bin/clunk80-ssm-agent
+ExecStart=/usr/bin/bzero-ssm-agent
 KillMode=process
 Restart=on-failure
 RestartForceExitStatus=SIGPIPE

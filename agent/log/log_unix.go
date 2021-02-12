@@ -24,9 +24,9 @@ const (
 	// DefaultSeelogConfigFilePath specifies the default seelog location
 	// The underlying logger is based of https://github.com/cihub/seelog
 	// See Seelog documentation to customize the logger
-	DefaultSeelogConfigFilePath = "/etc/amazon/ssm/seelog.xml"
+	DefaultSeelogConfigFilePath = "/etc/bzero/ssm/seelog.xml"
 
-	DefaultLogDir = "/var/log/clunk80/ssm"
+	DefaultLogDir = "/var/log/bzero/ssm"
 )
 
 // getLogConfigBytes reads and returns the seelog configs from the config file path if present

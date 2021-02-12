@@ -1,10 +1,10 @@
 echo "Stopping agent"
 if [ $(cat /proc/1/comm) = init ]
 then
-    stop clunk80-ssm-agent || true
+    stop bzero-ssm-agent || true
 elif [ $(cat /proc/1/comm) = systemd ]
 then
-    systemctl stop clunk80-ssm-agent
-    systemctl disable clunk80-ssm-agent
+    systemctl stop bzero-ssm-agent
+    systemctl disable bzero-ssm-agent
     systemctl daemon-reload
 fi

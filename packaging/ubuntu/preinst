@@ -3,19 +3,19 @@
 echo "Preparing for install"
 if [ $(cat /proc/1/comm) = init ]
 then
-    stop clunk80-ssm-agent || true
+    stop bzero-ssm-agent || true
 elif [ $(cat /proc/1/comm) = systemd ]
 then
     echo "-> Systemd detected"
     systemctl is-active snapd.service
     if [ $? -eq 0 ]; then
-        # snap service is active and user install clunk80-ssm-agent via snap
-        snap list | grep "clunk80-ssm-agent"
+        # snap service is active and user install bzero-ssm-agent via snap
+        snap list | grep "bzero-ssm-agent"
         if [ $? -eq 0 ]; then
-            echo "-> clunk80-ssm-agent is installed in this instance by snap, please use snap to update or uninstall."
+            echo "-> bzero-ssm-agent is installed in this instance by snap, please use snap to update or uninstall."
             exit 1
         fi
     fi
-    systemctl stop clunk80-ssm-agent
+    systemctl stop bzero-ssm-agent
     systemctl daemon-reload
 fi

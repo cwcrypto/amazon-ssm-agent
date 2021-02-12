@@ -1,7 +1,7 @@
-Name         : clunk80-ssm-agent
+Name         : bzero-ssm-agent
 Version      : %rpmversion
 Release      : 1
-Summary      : Modified Amazon SSM Agent for use with clunk80.com
+Summary      : Modified Amazon SSM Agent for use with bastionzero.com
 
 License      : Apache License, Version 2.0
 
@@ -9,25 +9,25 @@ Packager     : Commonwealth Crypto, Inc.
 Vendor       : Commonwealth Crypto, Inc.
 
 %description
-This package provides a modified Amazon SSM Agent for use with clunk80.com
+This package provides a modified Amazon SSM Agent for use with bastionzero.com
 
 %files
 %defattr(-,root,root,-)
-/etc/clunk80/ssm/amazon-ssm-agent.json.template
-/etc/clunk80/ssm/seelog.xml.template
-/usr/bin/clunk80-ssm-agent
-/usr/bin/clunk80-ssm-agent-worker
-/usr/bin/clunk80-ssm-cli
-/usr/bin/clunk80-ssm-document-worker
-/usr/bin/clunk80-ssm-session-worker
-/usr/bin/clunk80-ssm-session-logger
-/var/lib/clunk80/ssm/
-%doc /etc/clunk80/ssm/RELEASENOTES.md
-%doc /etc/clunk80/ssm/README.md
-%doc /etc/clunk80/ssm/NOTICE.md
+/etc/bzero/ssm/amazon-ssm-agent.json.template
+/etc/bzero/ssm/seelog.xml.template
+/usr/bin/bzero-ssm-agent
+/usr/bin/bzero-ssm-agent-worker
+/usr/bin/bzero-ssm-cli
+/usr/bin/bzero-ssm-document-worker
+/usr/bin/bzero-ssm-session-worker
+/usr/bin/bzero-ssm-session-logger
+/var/lib/bzero/ssm/
+%doc /etc/bzero/ssm/RELEASENOTES.md
+%doc /etc/bzero/ssm/README.md
+%doc /etc/bzero/ssm/NOTICE.md
 
-%config(noreplace) /etc/init/clunk80-ssm-agent.conf
-%config(noreplace) /etc/systemd/system/clunk80-ssm-agent.service
+%config(noreplace) /etc/init/bzero-ssm-agent.conf
+%config(noreplace) /etc/systemd/system/bzero-ssm-agent.service
 
 # The scriptlets in %pre and %post are run before and after a package is installed.
 # The scriptlets %preun and %postun are run before and after a package is uninstalled.
@@ -44,9 +44,9 @@ This package provides a modified Amazon SSM Agent for use with clunk80.com
 if [ $1 -ge 2 ]; then
     /sbin/init --version &> stdout.txt
     if [[ `cat stdout.txt` =~ upstart ]]; then
-        /sbin/stop clunk80-ssm-agent
+        /sbin/stop bzero-ssm-agent
     elif [[ `systemctl` =~ -\.mount ]]; then
-        systemctl stop clunk80-ssm-agent
+        systemctl stop bzero-ssm-agent
         systemctl daemon-reload
     fi
     rm stdout.txt
@@ -57,11 +57,11 @@ fi
 if [ $1 -eq 0 ] ; then
     /sbin/init --version &> stdout.txt
     if [[ `cat stdout.txt` =~ upstart ]]; then
-        /sbin/stop clunk80-ssm-agent
+        /sbin/stop bzero-ssm-agent
         sleep 1
     elif [[ `systemctl` =~ -\.mount ]]; then
-        systemctl stop clunk80-ssm-agent
-        systemctl disable clunk80-ssm-agent
+        systemctl stop bzero-ssm-agent
+        systemctl disable bzero-ssm-agent
         systemctl daemon-reload
     fi
     rm stdout.txt
@@ -72,10 +72,10 @@ fi
 if [[ $1 -ge 0 ]]; then
     /sbin/init --version &> stdout.txt
     if [[ `cat stdout.txt` =~ upstart ]]; then
-        /sbin/start clunk80-ssm-agent
+        /sbin/start bzero-ssm-agent
     elif [[ `systemctl` =~ -\.mount ]]; then
-        systemctl enable clunk80-ssm-agent
-        systemctl start clunk80-ssm-agent
+        systemctl enable bzero-ssm-agent
+        systemctl start bzero-ssm-agent
         systemctl daemon-reload
     fi
     rm stdout.txt

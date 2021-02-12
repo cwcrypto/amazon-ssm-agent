@@ -18,7 +18,7 @@ package message
 
 const (
 	DefaultIPCPrefix         = "ipc://"
-	DefaultCoreAgentChannel  = "/var/lib/clunk80/ssm/ipc/"
+	DefaultCoreAgentChannel  = "/var/lib/bzero/ssm/ipc/"
 	GetWorkerHealthChannel   = DefaultIPCPrefix + DefaultCoreAgentChannel + "health"
 	TerminationWorkerChannel = DefaultIPCPrefix + DefaultCoreAgentChannel + "termination"
 )

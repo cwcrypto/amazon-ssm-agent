@@ -52,7 +52,7 @@ package:: create-package-folder package-linux package-windows package-darwin
 
 release:: clean quick-integtest checkstyle pre-release build prepack package build-tests copy-package-dep
 
-clunk80:: clean copy-src pre-build build prepack create-package-folder package-rpm package-deb
+bzero:: clean copy-src pre-build build prepack create-package-folder package-rpm package-deb
 
 ifneq ($(FINALIZE),)
 	bgo-final

@@ -25,52 +25,52 @@ import (
 
 const (
 	// PackageRoot specifies the directory under which packages will be downloaded and installed
-	PackageRoot = "/var/lib/clunk80/ssm/packages"
+	PackageRoot = "/var/lib/bzero/ssm/packages"
 
 	// PackageLockRoot specifies the directory under which package lock files will reside
-	PackageLockRoot = "/var/lib/clunk80/ssm/locks/packages"
+	PackageLockRoot = "/var/lib/bzero/ssm/locks/packages"
 
 	// PackagePlatform is the platform name to use when looking for packages
 	PackagePlatform = "linux"
 
 	// DaemonRoot specifies the directory where daemon registration information is stored
-	DaemonRoot = "/var/lib/clunk80/ssm/daemons"
+	DaemonRoot = "/var/lib/bzero/ssm/daemons"
 
 	// LocalCommandRoot specifies the directory where users can submit command documents offline
-	LocalCommandRoot = "/var/lib/clunk80/ssm/localcommands"
+	LocalCommandRoot = "/var/lib/bzero/ssm/localcommands"
 
 	// LocalCommandRootSubmitted is the directory where locally submitted command documents
 	// are moved when they have been picked up
-	LocalCommandRootSubmitted = "/var/lib/clunk80/ssm/localcommands/submitted"
-	LocalCommandRootCompleted = "/var/lib/clunk80/ssm/localcommands/completed"
+	LocalCommandRootSubmitted = "/var/lib/bzero/ssm/localcommands/submitted"
+	LocalCommandRootCompleted = "/var/lib/bzero/ssm/localcommands/completed"
 
 	// LocalCommandRootInvalid is the directory where locally submitted command documents
 	// are moved if the service cannot validate the document (generally impossible via cli)
-	LocalCommandRootInvalid = "/var/lib/clunk80/ssm/localcommands/invalid"
+	LocalCommandRootInvalid = "/var/lib/bzero/ssm/localcommands/invalid"
 
 	// DownloadRoot specifies the directory under which files will be downloaded
-	DownloadRoot = "/var/log/clunk80/ssm/download/"
+	DownloadRoot = "/var/log/bzero/ssm/download/"
 
 	// DefaultDataStorePath represents the directory for storing system data
-	DefaultDataStorePath = "/var/lib/clunk80/ssm/"
+	DefaultDataStorePath = "/var/lib/bzero/ssm/"
 
 	// EC2ConfigDataStorePath represents the directory for storing ec2 config data
-	EC2ConfigDataStorePath = "/var/lib/clunk80/ec2config/"
+	EC2ConfigDataStorePath = "/var/lib/bzero/ec2config/"
 
 	// EC2ConfigSettingPath represents the directory for storing ec2 config settings
-	EC2ConfigSettingPath = "/var/lib/clunk80/ec2configservice/"
+	EC2ConfigSettingPath = "/var/lib/bzero/ec2configservice/"
 
 	// UpdaterArtifactsRoot represents the directory for storing update related information
-	UpdaterArtifactsRoot = "/var/lib/clunk80/ssm/update/"
+	UpdaterArtifactsRoot = "/var/lib/bzero/ssm/update/"
 
 	// UpdaterPidLockfile represents the location of the updater lockfile
 	UpdaterPidLockfile = DefaultDataStorePath + "update.lock"
 
 	// DefaultPluginPath represents the directory for storing plugins in SSM
-	DefaultPluginPath = "/var/lib/clunk80/ssm/plugins"
+	DefaultPluginPath = "/var/lib/bzero/ssm/plugins"
 
 	// ManifestCacheDirectory represents the directory for storing all downloaded manifest files
-	ManifestCacheDirectory = "/var/lib/clunk80/ssm/manifests"
+	ManifestCacheDirectory = "/var/lib/bzero/ssm/manifests"
 
 	// List all plugin names, unfortunately golang doesn't support const arrays of strings
 
@@ -97,11 +97,11 @@ const (
 var PowerShellPluginCommandName string
 
 // DefaultProgramFolder is the default folder for SSM
-var DefaultProgramFolder = "/etc/clunk80/ssm/"
-var DefaultSSMAgentWorker = "/usr/bin/clunk80-ssm-agent-worker"
-var DefaultDocumentWorker = "/usr/bin/clunk80-ssm-document-worker"
-var DefaultSessionWorker = "/usr/bin/clunk80-ssm-session-worker"
-var DefaultSessionLogger = "/usr/bin/clunk80-ssm-session-logger"
+var DefaultProgramFolder = "/etc/bzero/ssm/"
+var DefaultSSMAgentWorker = "/usr/bin/bzero-ssm-agent-worker"
+var DefaultDocumentWorker = "/usr/bin/bzero-ssm-document-worker"
+var DefaultSessionWorker = "/usr/bin/bzero-ssm-session-worker"
+var DefaultSessionLogger = "/usr/bin/bzero-ssm-session-logger"
 
 // AppConfigPath is the path of the AppConfig
 var AppConfigPath = DefaultProgramFolder + AppConfigFileName
